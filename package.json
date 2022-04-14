@@ -1,0 +1,27 @@
+{
+    "name": "mysimulator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --passWithNoTests",
+        "test:watch": "jest --watch --passWithNoTests",
+        "runner": "nodemon engine/tests/dialogTree.runner.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/inquirer": "^8.2.1",
+        "@types/jest": "^27.4.1",
+        "@types/lodash": "^4.14.181",
+        "jest": "^27.5.1",
+        "nodemon": "^2.0.15",
+        "ts-jest": "^27.1.4",
+        "ts-node": "^10.7.0",
+        "typescript": "^4.6.3"
+    },
+    "dependencies": {
+        "inquirer": "^8.2.2",
+        "lodash": "^4.17.21"
+    }
+}
