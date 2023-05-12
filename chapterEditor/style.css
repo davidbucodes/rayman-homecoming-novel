@@ -1,0 +1,88 @@
+@font-face {
+    font-family: Rayman;
+    src: url(./assets/fonts/Rayman\ 1.ttf);
+}
+
+body {
+    margin: 0 17%;
+}
+
+body * {
+    font-size: 21px;
+}
+
+canvas {
+    display: block;
+}
+
+.node-row {
+    display: flex;
+    margin: 4px;
+}
+
+.node-row.dialog {
+    background-color: #fbffb4;
+    display: flex;
+}
+
+.node-row.speakers {
+    background-color: #dcffbb;
+}
+
+.node-row.music {
+    background-color: #ffecc9;
+}
+
+.node-row.backgroundImage {
+    background-color: #c6e0ff;
+}
+
+.node-row.sound {
+    background-color: #f0d6fd;
+}
+
+.node-row.filter {
+    background-color: #baebc9;
+}
+
+.node-row > div {
+    padding: 4px;
+}
+
+.node-row.speakers > div:last-child {
+    display: flex;
+}
+
+.node-row.dialog > div:last-child {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.node-row > div > div > div {
+    width: 100%;
+    display: flex;
+    padding-top: 4px;
+}
+
+.node-row > div > div > div > input[type="text"] {
+    flex-grow: 1;
+    margin-right: 25px;
+}
+
+select[multiple="true"] {
+    height: 250px;
+}
+
+span {
+    margin-right: 4px;
+}
+
+@keyframes highlight {
+    0% {
+        background: #ffff1f;
+    }
+}
+
+.highlight {
+    animation: highlight 2s;
+}

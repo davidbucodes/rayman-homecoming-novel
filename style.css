@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Rayman;
+    src: url(./assets/fonts/Rayman\ 1.ttf);
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}

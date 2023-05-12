@@ -1,12 +1,24 @@
 {
-    "cSpell.words": [
-        "Betilla",
-        "Electoon",
-        "Globox",
-        "Rayman",
-        "Raywoman",
-        "Skops",
-        "Tarayzan",
-        "Uglette"
-    ]
+	"cSpell.words": [
+		"Betilla",
+		"Betillas",
+		"Bzzit",
+		"Electoon",
+		"furigana",
+		"Globox",
+		"Madara",
+		"Minigame",
+		"PIXI",
+		"Rayman",
+		"Skops",
+		"Tarayzan",
+		"Textbox",
+		"Ubisoft"
+	],
+	"explorer.compactFolders": false,
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"yaml.completion": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
 }

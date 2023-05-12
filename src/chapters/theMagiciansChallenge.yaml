@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=../../jsonSchemas/chapter.json
+nodes:
+    - type: backgroundImage
+      backgroundImage: BandLand_1
+    - type: music
+      musicId: TheMagiciansChallenge
+    - type: speakers
+      left: []
+      right:
+          - Rayman
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: マジシャンさん？入ってもいいですか？
+    - type: dialog
+      speaker: Magician
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: は、はい！どうぞどうぞ！
+    - type: speakers
+      left:
+          - Magician
+      right:
+          - Rayman
+    - type: dialog
+      speaker: Magician
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: レイマンくん！久しぶりでジシャン～
+    - type: dialog
+      speaker: Magician
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: お元気でジシャン～？
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: あのジシャンジシャンってちょっとやばいだろう？えっと、やめてくださいよ
+    - type: dialog
+      speaker: Magician
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: 命令するなでジシャン！これはワシの話し方でジシャン～！
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: そうであるのか？
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: いいだろう、今から俺もこんな風にしゃべるマン～！
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Text
+          he-IL: טקסט
+          ja-JP: いい天気ですマン～！
+
+audio: []

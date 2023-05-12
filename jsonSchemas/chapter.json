@@ -1,0 +1,418 @@
+{
+    "type": "object",
+    "properties": {
+        "nodes": {
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Decisions"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Dialog"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Speakers"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.BackgroundImage"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Music"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Sound"
+                    },
+                    {
+                        "$ref": "#/definitions/ChapterNodeTypes.Filter"
+                    }
+                ]
+            }
+        },
+        "audio": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "base64Audio": {
+                        "type": "string"
+                    },
+                    "voiceEvents": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "gameEvent": {
+                                    "enum": [
+                                        "StartLipMove",
+                                        "StopLipMove",
+                                        "VoiceRead"
+                                    ],
+                                    "type": "string"
+                                },
+                                "millisecondsFromStart": {
+                                    "type": "number"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "gameEvent",
+                                "millisecondsFromStart"
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "base64Audio",
+                    "id",
+                    "voiceEvents"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "nodes"
+    ],
+    "definitions": {
+        "ChapterNodeTypes.Decisions": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "decisions"
+                    ]
+                },
+                "decisionsTitle": {
+                    "type": "string"
+                },
+                "decisions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "question": {
+                                "$ref": "#/definitions/TextValue"
+                            },
+                            "options": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/TextValue"
+                                }
+                            }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                            "options",
+                            "question"
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "decisions",
+                "type"
+            ]
+        },
+        "TextValue": {
+            "type": "object",
+            "properties": {
+                "ja-JP": {
+                    "type": "string"
+                },
+                "en-US": {
+                    "type": "string"
+                },
+                "he-IL": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "en-US",
+                "he-IL",
+                "ja-JP"
+            ]
+        },
+        "ChapterNodeTypes.Dialog": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "dialog"
+                    ]
+                },
+                "speaker": {
+                    "$ref": "#/definitions/SpeakerId"
+                },
+                "text": {
+                    "$ref": "#/definitions/TextValue"
+                },
+                "shouldSpeakSlow": {
+                    "type": "boolean",
+                    "enum": [
+                        true
+                    ]
+                },
+                "audio": {
+                    "$ref": "#/definitions/Partial<TextValue>"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "speaker",
+                "text",
+                "type"
+            ]
+        },
+        "SpeakerId": {
+            "enum": [
+                "Betilla",
+                "Globox",
+                "Joe",
+                "Magician",
+                "MrSkops",
+                "Musician",
+                "Rayman",
+                "Tarayzan"
+            ],
+            "type": "string"
+        },
+        "Partial<TextValue>": {
+            "type": "object",
+            "properties": {
+                "ja-JP": {
+                    "type": "string"
+                },
+                "en-US": {
+                    "type": "string"
+                },
+                "he-IL": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ChapterNodeTypes.Speakers": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "speakers"
+                    ]
+                },
+                "right": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SpeakerId"
+                    }
+                },
+                "left": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SpeakerId"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "type"
+            ]
+        },
+        "ChapterNodeTypes.BackgroundImage": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "backgroundImage"
+                    ]
+                },
+                "backgroundImage": {
+                    "$ref": "#/definitions/BackgroundImageId"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "backgroundImage",
+                "type"
+            ]
+        },
+        "BackgroundImageId": {
+            "enum": [
+                "BandLand_1",
+                "BandLand_2",
+                "BandLand_3",
+                "BandLand_4",
+                "BetillasHouse",
+                "BetillasSalon",
+                "BlueMountains_2",
+                "BlueMountains_3",
+                "CandyChateau_1",
+                "CandyChateau_2",
+                "EatAtJoes",
+                "MamaBoss_1",
+                "MamaBoss_2",
+                "MoskitosNest",
+                "MrDarksDare",
+                "MrSaxsHullaballo",
+                "MrSkopsStalactites",
+                "MrStonesPeaks",
+                "MusicianHouse",
+                "PictureCity_2",
+                "PictureCity_3",
+                "RaymansHome",
+                "TheCaveOfSkops_1",
+                "TheCaveOfSkops_2",
+                "TheDreamForest_1",
+                "TheDreamForest_3",
+                "TitleScreen",
+                "WorldMap",
+                "WorldMapPixelized",
+                "WorldMapUpscaled"
+            ],
+            "type": "string"
+        },
+        "ChapterNodeTypes.Music": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "music"
+                    ]
+                },
+                "musicId": {
+                    "$ref": "#/definitions/MusicId"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "musicId",
+                "type"
+            ]
+        },
+        "MusicId": {
+            "enum": [
+                "AnimalLife",
+                "BetillaTheFairy",
+                "BlazingBrass",
+                "BongoBridge",
+                "BzzitAttacks",
+                "Cakewalk",
+                "CallOfTheMountain",
+                "CandyParty",
+                "CreepyClowns",
+                "CuttingTheRopes",
+                "DeepConcentration",
+                "DeepForest",
+                "DizzyingHeights",
+                "DrumsOfTheEnemy",
+                "DuetWithMrSax",
+                "EnteringTheCavern",
+                "FirstSteps",
+                "FlightOfTheMosquito",
+                "Harmony",
+                "HoldOnTight",
+                "KingOfTheMountain",
+                "LearningWithRayman",
+                "LurkingInTheDarkness",
+                "MeditatingMonks",
+                "MoskitosRage",
+                "MrDarksDare",
+                "MusicianSong",
+                "NightOnBlueMountain",
+                "OnceMore",
+                "PaintedPentathlon",
+                "PartyAtJoes",
+                "PeacefulPeaks",
+                "PicturePerfect",
+                "Rainfall",
+                "SoundsInTheShadows",
+                "SpaceMamasFinale",
+                "SpaceMamasOverture",
+                "StageFright",
+                "TheBandAwakens",
+                "TheFlood",
+                "TheInkySea",
+                "TheMagiciansChallenge",
+                "TheMountainStreams",
+                "TheRedDrummers",
+                "TheStalactitesTeardrops",
+                "Thunderstorm",
+                "VenomousMrSkops",
+                "WatchYourStep",
+                "WorldMap"
+            ],
+            "type": "string"
+        },
+        "ChapterNodeTypes.Sound": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "sound"
+                    ]
+                },
+                "soundId": {
+                    "$ref": "#/definitions/SoundId"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "soundId",
+                "type"
+            ]
+        },
+        "SoundId": {
+            "enum": [
+                "UbisoftPresents",
+                "Yeah"
+            ],
+            "type": "string"
+        },
+        "ChapterNodeTypes.Filter": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "filter"
+                    ]
+                },
+                "filterId": {
+                    "$ref": "#/definitions/FilterId"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "type"
+            ]
+        },
+        "FilterId": {
+            "enum": [
+                "Alpha",
+                "BlackAndWhite",
+                "Blend",
+                "Blur",
+                "Darken",
+                "Dots",
+                "Nostalgic",
+                "Pixelate",
+                "Ray",
+                "Shockwave"
+            ],
+            "type": "string"
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}

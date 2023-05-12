@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../jsonSchemas/chapter.json
+nodes:
+    - type: music
+      musicId: FirstSteps
+    - type: backgroundImage
+      backgroundImage: EatAtJoes
+    - type: speakers
+      left:
+          - Globox
+          - Tarayzan
+      right:
+          - Rayman
+          - Musician
+    - type: dialog
+      speaker: Globox
+      text:
+          en-US: Do. Re.
+          he-IL: דו. רה.
+          ja-JP: ど. れ.
+    - type: dialog
+      speaker: Musician
+      text:
+          en-US: Mi. Fa.
+          he-IL: מי. פה.
+          ja-JP: み. ふぁ.
+    - type: dialog
+      speaker: Tarayzan
+      text:
+          en-US: Sol. La.
+          he-IL: סול. לה.
+          ja-JP: そ. ら.
+    - type: dialog
+      speaker: Rayman
+      text:
+          en-US: Si. Do.
+          he-IL: סי. דו.
+          ja-JP: し. ど.
