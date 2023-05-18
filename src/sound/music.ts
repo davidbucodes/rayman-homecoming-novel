@@ -1,5 +1,5 @@
-import { musicDatabase } from "../databases/music";
 import { MusicId } from "../databases/identifiers/musicId";
+import { musicDatabase } from "../databases/music";
 import { Audio } from "./audio";
 
 export class Music extends Audio {

@@ -17,7 +17,6 @@ export interface AudioOptions {
 export class Audio {
 	private _audioElement: HTMLAudioElement = null;
 	private _volume: number;
-	private _started: boolean = false;
 
 	constructor(private options: AudioOptions = {}) {
 		this.init();
@@ -47,7 +46,6 @@ export class Audio {
 	remove() {
 		this._audioElement.remove();
 		this._audioElement = null;
-		this._started = false;
 	}
 
 	setVolume(volume: AudioVolume) {
@@ -56,12 +54,10 @@ export class Audio {
 	}
 
 	play() {
-		this._started = true;
 		this._audioElement.play();
 	}
 
 	pause() {
-		this._started = false;
 		this._audioElement.pause();
 	}
 
@@ -72,10 +68,6 @@ export class Audio {
 
 	setAudio(audioUrl: string) {
 		this._audioElement.src = audioUrl;
-	}
-
-	get isPlaying() {
-		return !this._audioElement.paused && !this._audioElement.ended && !this._started;
 	}
 
 	async fadeOut(duration: number = 500) {

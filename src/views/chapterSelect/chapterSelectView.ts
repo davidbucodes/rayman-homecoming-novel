@@ -49,16 +49,10 @@ export class ChapterSelectView extends GraphicElement<ChapterSelectViewOptions> 
 		this.addChapterTitle();
 
 		this._backgroundMusic = new Music();
-		if (!this._backgroundMusic.isPlaying) {
-			this._backgroundMusic.start(MusicId.WorldMap);
-		}
+		this._backgroundMusic.start(MusicId.WorldMap);
 
 		MouseEvents.registerPointerUpEvent(this._container, () => {
 			Device.openFullscreen();
-
-			if (!this._backgroundMusic.isPlaying) {
-				this._backgroundMusic.start(MusicId.WorldMap);
-			}
 		});
 
 		const worldMapHeight = this.options.dimensions.height - this._worldMapPaddingTopBottom * 2;
