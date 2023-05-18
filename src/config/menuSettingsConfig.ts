@@ -1,8 +1,8 @@
-import { Config } from "./config";
-import { languageDatabase } from "../databases/language";
 import { LanguageId } from "../databases/identifiers/languageId";
+import { languageDatabase } from "../databases/language";
 import { GameEvent, GameEvents } from "../events/gameEvents";
 import { KeyboardKeyId } from "../events/keyboardEvents";
+import { Config } from "./config";
 
 export interface SettingsButtonConfig {
 	type: "button";
@@ -137,7 +137,7 @@ export const menuSettingsConfig: MenuSettingsConfig = [
 		type: "button",
 		keyboardKey: KeyboardKeyId.M,
 		onClick() {
-			alert("何なんだてめえ…");
+			alert("何なんだてめえ…（笑）");
 		},
 		label: {
 			"ja-JP": "ダビド",

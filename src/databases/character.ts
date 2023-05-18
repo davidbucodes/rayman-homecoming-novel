@@ -23,7 +23,7 @@ export const characterBadgeDatabase: {
 		badgeImageUrl: "./assets/images/characterBadge/magician.png",
 	},
 	Medallion: {
-		badgeImageUrl: "./assets/images/characterBadge/Medallion.png",
+		badgeImageUrl: "./assets/images/characterBadge/medallion.png",
 	},
 	MrDark: {
 		badgeImageUrl: "./assets/images/characterBadge/mrdark.png",

@@ -1,28 +1,26 @@
 import * as PIXI from "pixi.js";
-import { Device } from "../../device/device";
-import { BackgroundImage } from "../image/backgroundImage";
-import { Music } from "../../sound/music";
-import { MusicId } from "../../databases/identifiers/musicId";
-import { TexturesLoader } from "../loaders/texturesLoader";
 import { backgroundImageDatabase } from "../../databases/backgroundImage";
-import { BackgroundImageId } from "../../databases/identifiers/backgroundImageId";
-import { characterBadgeDatabase } from "../../databases/character";
 import { chapterDatabase } from "../../databases/chapter";
-import { ChapterView } from "../chapter/chapterView";
-import { KeyboardEvents, KeyboardKeyId } from "../../events/keyboardEvents";
-import { GraphicElement, GraphicElementOptions } from "../graphicElement/graphicElement";
-import { WorldMap } from "./worldMap";
+import { characterBadgeDatabase } from "../../databases/character";
+import { BackgroundImageId } from "../../databases/identifiers/backgroundImageId";
 import { ChapterId } from "../../databases/identifiers/chapterId";
-import { Config } from "../../config/config";
-import { NextDirections } from "./nextDirections";
-import { App } from "../app/app";
-import { Coordinates } from "../graphicElement/dimensions";
-import { Anchor } from "../graphicElement/anchor";
-import { Text } from "../text/text";
-import { TextStyle } from "../styles/textStyle";
-import { FontGradientColor } from "../styles/colors";
+import { MusicId } from "../../databases/identifiers/musicId";
+import { Device } from "../../device/device";
 import { GameEvents } from "../../events/gameEvents";
+import { KeyboardEvents, KeyboardKeyId } from "../../events/keyboardEvents";
 import { MouseEvents } from "../../events/mouseEvents";
+import { Music } from "../../sound/music";
+import { App } from "../app/app";
+import { ChapterView } from "../chapter/chapterView";
+import { Anchor } from "../graphicElement/anchor";
+import { Coordinates } from "../graphicElement/dimensions";
+import { GraphicElement, GraphicElementOptions } from "../graphicElement/graphicElement";
+import { BackgroundImage } from "../image/backgroundImage";
+import { TexturesLoader } from "../loaders/texturesLoader";
+import { FontGradientColor } from "../styles/colors";
+import { Text } from "../text/text";
+import { NextDirections } from "./nextDirections";
+import { WorldMap } from "./worldMap";
 
 type ChapterSelectViewOptions = GraphicElementOptions;
 
@@ -52,10 +50,10 @@ export class ChapterSelectView extends GraphicElement<ChapterSelectViewOptions> 
 
 		MouseEvents.registerPointerUpEvent(this._container, () => {
 			Device.openFullscreen();
-		});
 
-		this._backgroundMusic = new Music();
-		this._backgroundMusic.start(MusicId.WorldMap);
+			this._backgroundMusic = new Music();
+			this._backgroundMusic.start(MusicId.WorldMap);
+		});
 
 		const worldMapHeight = this.options.dimensions.height - this._worldMapPaddingTopBottom * 2;
 		this._worldMap = new WorldMap({
