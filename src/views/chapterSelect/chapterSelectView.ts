@@ -49,6 +49,9 @@ export class ChapterSelectView extends GraphicElement<ChapterSelectViewOptions> 
 		this.addChapterTitle();
 
 		this._backgroundMusic = new Music();
+		if (!this._backgroundMusic.isPlaying) {
+			this._backgroundMusic.start(MusicId.WorldMap);
+		}
 
 		MouseEvents.registerPointerUpEvent(this._container, () => {
 			Device.openFullscreen();
