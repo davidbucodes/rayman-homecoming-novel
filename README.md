@@ -1,14 +1,15 @@
 # Rayman Homecoming Novel (work in progress)
 
-This project is a fan based interactive light-novel engine built upon PIXI.JS using vanilla TypeScript.
-The engine focuses on rendering predefined yaml story chapter files.
+This project is a fan based interactive light-novel engine built upon PIXI.JS using vanilla TypeScript.  
+The engine focuses on rendering predefined yaml story chapter files.  
 Aside from the main app, a dedicated app for creating story chapters is available.
+
 
 The story revolves about Rayman returning to The Valley a year after the completion of Rayman 1.
 
-This is a woork in progess project, so some bugs might occur while playing.
-Please run this at a full screen Chrome browser.
-Please install Japanese language voices from Windows settings.
+This is a woork in progess project, so some bugs might occur while playing.  
+Please run this at a full screen Chrome browser.  
+Please install Japanese language voices from Windows settings.  
 
 # Enabling local LAN connections
 
